@@ -1,0 +1,21 @@
+{
+    "name": "alfa6661/yii2-raty",
+    "description": "A wrapper for jQuery Raty plugin",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"," star rating"," raty"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "alfa",
+            "email": "alfa2159@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "alfa6661\\widgets\\": ""
+        }
+    }
+}
