@@ -1,6 +1,6 @@
 yii2-raty
 ====
-Yii2-raty is a wrapper for [jQuery Raty plugin](http://wbotelhos.com/raty)
+Yii2-raty is a wrapper for [jQuery Raty plugin](http://wbotelhos.com/raty). jQuery Raty is a plugin that generates a customizable star rating automatically.
 
 Installation
 ------------
