@@ -81,6 +81,11 @@ class Raty extends \yii\widgets\InputWidget
         if(!empty($this->pluginOptions['score'])) {
 		$this->options['data-score'] = $this->pluginOptions['score'];
 	}
+
+        if(!isset($this->pluginOptions['scoreName']) && $this->hasModel()) {
+            $this->pluginOptions['scoreName'] = Html::getInputName($this->model, $this->attribute);
+        }
+
         $this->registerAssets();
         return Html::tag('div', '', $this->options);        
     }

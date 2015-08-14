@@ -54,6 +54,17 @@ Once the extension is installed, simply use it in your code by  :
 	]
 ]); ?>
 
+// Usage with ActiveForm and model
+<?= $form->field($model, 'rating')->widget(\alfa6661\widgets\Raty::className()
+	'options' => [
+		// the HTML attributes for the widget container
+	],
+	'pluginOptions' => [
+		// the options for the underlying jQuery Raty plugin
+		// see : https://github.com/wbotelhos/raty#options
+	]
+) ?>
+
 // Javascript events handling
 // Available event callbacks: Read Only, Click, Mouseover and Mouseout
 <?= \alfa6661\widgets\Raty::widget([
