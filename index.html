@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Yii2-raty by alfa6661</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Yii2-raty</h1>
+      <h2 class="project-tagline">Yii2-raty is a Star Rating Plugin wrapper for jQuery Raty plugin</h2>
+      <a href="https://github.com/alfa6661/yii2-raty" class="btn">View on GitHub</a>
+      <a href="https://github.com/alfa6661/yii2-raty/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/alfa6661/yii2-raty/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="yii2-raty" class="anchor" href="#yii2-raty" aria-hidden="true"><span class="octicon octicon-link"></span></a>yii2-raty</h1>
+
+<p>Yii2-raty is a wrapper for <a href="http://wbotelhos.com/raty">jQuery Raty plugin</a>. jQuery Raty is a plugin that generates a customizable star rating automatically.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>The preferred way to install this extension is through <a href="http://getcomposer.org/download/">composer</a>.</p>
+
+<p>Either run</p>
+
+<pre><code>php composer.phar require --prefer-dist alfa6661/yii2-raty "*"
+</code></pre>
+
+<p>or add</p>
+
+<pre><code>"alfa6661/yii2-raty": "*"
+</code></pre>
+
+<p>to the require section of your <code>composer.json</code> file.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Once the extension is installed, simply use it in your code by  :</p>
+
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-c">// Usage</span></span>
+<span class="pl-s1"><span class="pl-k">&lt;</span>?<span class="pl-k">=</span> <span class="pl-c1">\alfa6661\widgets\</span><span class="pl-c1">Raty</span><span class="pl-k">::</span>widget([</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>user-vote<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>options<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1">        <span class="pl-c">// the HTML attributes for the widget container</span></span>
+<span class="pl-s1">    ],</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>pluginOptions<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1">        <span class="pl-c">// the options for the underlying jQuery Raty plugin</span></span>
+<span class="pl-s1">        <span class="pl-c">// see : https://github.com/wbotelhos/raty#options</span></span>
+<span class="pl-s1">    ]</span>
+<span class="pl-s1">]); </span><span class="pl-pse"><span class="pl-s1">?</span>&gt;</span>
+
+
+// Usage with model
+<span class="pl-pse">&lt;?=</span><span class="pl-s1"> <span class="pl-c1">\alfa6661\widgets\</span><span class="pl-c1">Raty</span><span class="pl-k">::</span>widget([</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>model<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-smi">$model</span>,</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>attribute<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>rating<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>options<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1">        <span class="pl-c">// the HTML attributes for the widget container</span></span>
+<span class="pl-s1">    ],</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>pluginOptions<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1">        <span class="pl-c">// the options for the underlying jQuery Raty plugin</span></span>
+<span class="pl-s1">        <span class="pl-c">// see : https://github.com/wbotelhos/raty#options</span></span>
+<span class="pl-s1">    ]</span>
+<span class="pl-s1">]); </span><span class="pl-pse"><span class="pl-s1">?</span>&gt;</span>
+
+// Usage with ActiveForm and model
+<span class="pl-pse">&lt;?=</span><span class="pl-s1"> <span class="pl-smi">$form</span><span class="pl-k">-&gt;</span>field(<span class="pl-smi">$model</span>, <span class="pl-s"><span class="pl-pds">'</span>point<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>widget(<span class="pl-c1">\alfa6661\widgets\</span><span class="pl-c1">Raty</span><span class="pl-k">::</span>className(), [</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>options<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1">        <span class="pl-c">// the HTML attributes for the widget container</span></span>
+<span class="pl-s1">    ],</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>pluginOptions<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1">        <span class="pl-c">// the options for the underlying jQuery Raty plugin</span></span>
+<span class="pl-s1">        <span class="pl-c">// see : https://github.com/wbotelhos/raty#options</span></span>
+<span class="pl-s1">    ]</span>
+<span class="pl-s1">]); </span><span class="pl-pse"><span class="pl-s1">?</span>&gt;</span>
+
+// Javascript events handling
+// Available event callbacks: Read Only, Click, Mouseover and Mouseout
+<span class="pl-pse">&lt;?=</span><span class="pl-s1"> <span class="pl-c1">\alfa6661\widgets\</span><span class="pl-c1">Raty</span><span class="pl-k">::</span>widget([</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>user-vote<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>options<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>class<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>pull-left<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>id<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>user-vote<span class="pl-pds">'</span></span></span>
+<span class="pl-s1">    ],</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>pluginOptions<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>click<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-k">new</span> <span class="pl-c1">\yii\web\</span><span class="pl-c1">JsExpression</span>(<span class="pl-s"><span class="pl-pds">'</span>function(score, e) {</span></span>
+<span class="pl-s1"><span class="pl-s">            alert(score);</span></span>
+<span class="pl-s1"><span class="pl-s">        }<span class="pl-pds">'</span></span>)</span>
+<span class="pl-s1">    ]</span>
+<span class="pl-s1">]); </span><span class="pl-pse"><span class="pl-s1">?</span>&gt;</span></pre></div>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/alfa6661/yii2-raty">Yii2-raty</a> is maintained by <a href="https://github.com/alfa6661">alfa6661</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
