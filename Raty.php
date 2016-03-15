@@ -34,17 +34,17 @@ class Raty extends \yii\widgets\InputWidget
     {    	
         $bundle = RatyAsset::register($this->view);
         $this->_defaultOptions = array(
-		'path' => $bundle->baseUrl .'/images',
-		'targetType' => 'number',			
-		'hints' => [
-			Yii::t('app','bad'),
-			Yii::t('app','poor'),
-			Yii::t('app','regular'),
-			Yii::t('app','good'),
-			Yii::t('app','gorgeous')
-		],
-		'noRatedMsg' => Yii::t('app','Not rated yet!'),
-		'cancelHint' => Yii::t('app', 'Cancel this rating!'),
+            'path' => $bundle->baseUrl .'/images',
+            'targetType' => 'number',
+            'hints' => [
+		Yii::t('app','bad'),
+		Yii::t('app','poor'),
+		Yii::t('app','regular'),
+		Yii::t('app','good'),
+		Yii::t('app','gorgeous')
+            ],
+            'noRatedMsg' => Yii::t('app','Not rated yet!'),
+            'cancelHint' => Yii::t('app', 'Cancel this rating!'),
 	);
 	parent::init();
     }
@@ -60,8 +60,8 @@ class Raty extends \yii\widgets\InputWidget
     	
     	$defaultConfiguration = '';
         foreach($this->_defaultOptions as $k => $v) {
-        	$value = Json::encode($v);
-		$defaultConfiguration .= "$.fn.raty.defaults.{$k}={$value};\n";
+            $value = Json::encode($v);
+            $defaultConfiguration .= "$.fn.raty.defaults.{$k}={$value};\n";
 	}
 
         $view->registerJs($defaultConfiguration);
@@ -73,13 +73,14 @@ class Raty extends \yii\widgets\InputWidget
      */
     public function run()
     {    
-        if(empty($this->options['id']))
+        if(empty($this->options['id'])) {
             $this->options['id'] = $this->getId();
+        }
 
         $this->pluginOptions['score'] = ($this->hasModel()) ? Html::getAttributeValue($this->model, $this->attribute) : $this->value;
         
         if(!empty($this->pluginOptions['score'])) {
-		$this->options['data-score'] = $this->pluginOptions['score'];
+            $this->options['data-score'] = $this->pluginOptions['score'];
 	}
 
         if(!isset($this->pluginOptions['scoreName']) && $this->hasModel()) {
