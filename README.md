@@ -1,5 +1,12 @@
 yii2-raty
-====
+=========
+
+[![StyleCI](https://styleci.io/repos/37120762/shield?style=flat)](https://styleci.io/repos/37120762)
+[![Total Downloads](https://poser.pugx.org/alfa6661/yii2-raty/downloads)](https://packagist.org/packages/alfa6661/yii2-raty)
+[![Latest Stable Version](https://poser.pugx.org/alfa6661/yii2-raty/v/stable)](https://packagist.org/packages/alfa6661/yii2-raty)
+[![Latest Unstable Version](https://poser.pugx.org/alfa6661/yii2-raty/v/unstable)](https://packagist.org/packages/alfa6661/yii2-raty)
+[![License](https://poser.pugx.org/alfa6661/yii2-raty/license)](https://packagist.org/packages/alfa6661/yii2-raty)
+
 Yii2-raty is a wrapper for [jQuery Raty plugin](http://wbotelhos.com/raty). jQuery Raty is a plugin that generates a customizable star rating automatically.
 
 Installation
